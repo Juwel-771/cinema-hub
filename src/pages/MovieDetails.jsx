@@ -3,7 +3,9 @@ import React from 'react';
 const MovieDetails = () => {
     return (
         <main>
-            <h2>MovieDetails</h2>
+            <div className=''>
+                <h2 className='text-3xl font-bold underline'>Movie List</h2>
+            </div>
         </main>
     );
 };
