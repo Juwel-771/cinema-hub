@@ -9,10 +9,11 @@ const header = () => {
 
     const [hidden, setHidden] = useState(true);
     const [searchHidden, setSearchHidden] = useState(true);
-    const [darkMode, setDarkMode] = useState(JSON.stringify(localStorage.getItem("darkMode")) || true);
+    // const [darkMode, setDarkMode] = useState(JSON.stringify(localStorage.getItem("darkMode")) || true);
+    const [darkMode, setDarkMode] = useState(true);
 
     useEffect(() => {
-        localStorage.setItem("darkMode", JSON.stringify(darkMode));
+        // localStorage.setItem("darkMode", JSON.stringify(darkMode));
 
         if(darkMode){
             document.documentElement.classList.add('dark');
@@ -27,7 +28,7 @@ const header = () => {
 
     return (
         <header>
-            <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-900">
+            <nav className="bg-white border-b-2 border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-900 dark:border-purple-600 dark:border-b-2">
 
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                     <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
