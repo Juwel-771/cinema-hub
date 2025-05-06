@@ -10,10 +10,12 @@ const MovieList = () => {
 
     useEffect(() => {
         async function fetchMovies(){
-            const response = await fetch();
+            const response = await fetch("https://api.themoviedb.org/3/movie/now_playing?api_key=abef22202ef4bbd29941b8c79553fc53");
             const data = await response.json();
             setMovies(data.results);
         }
+
+        fetchMovies(); 
     }, [])
 
     return (
@@ -22,12 +24,9 @@ const MovieList = () => {
         <main className='dark:bg-slate-800'>
             <section className='max-w-7xl mx-auto py-7'>
                 <div className='flex justify-start flex-wrap'>
-                    <Card></Card>
-                    <Card></Card>
-                    <Card></Card>
-                    <Card></Card>
-                    <Card></Card>
-                    <Card></Card>
+                    {
+                        movies.map(movies => <Card key={movies.id} movies = {movies}></Card>)
+                    }
                 </div>
             </section>
         </main>
