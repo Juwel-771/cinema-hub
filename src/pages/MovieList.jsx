@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Headers from '../components/Headers';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 import Card from '../components/Card';
 
 const MovieList = () => {
+
+    const [movies, setMovies] = useState([]);
+
+    useEffect(() => {
+        async function fetchMovies(){
+            const response = await fetch();
+            const data = await response.json();
+            setMovies(data.results);
+        }
+    }, [])
+
     return (
        <>
        <Headers></Headers>
