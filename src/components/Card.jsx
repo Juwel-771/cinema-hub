@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 
-const Card = ({movies}) => {
+const Card = ({movie}) => {
 
-  const {id, original_title, backdrop_path, poster_path, overview} = movies;
+  const {id, original_title, poster_path, overview} = movie;
   const image = `https://image.tmdb.org/t/p/w400/${poster_path}`;
 
   return (
