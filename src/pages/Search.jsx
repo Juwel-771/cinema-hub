@@ -13,17 +13,24 @@ const Search = ({apiPath}) => {
     const {data : movies} = useFetch(apiPath, queryTerm);
 
     return (
-        <main className='dark:bg-slate-800'>
-            <section className='max-w-7xl mx-auto py-7'>
-                <div className='flex justify-start flex-wrap'>
-                    {
-                        movies.map((movie)=> (
-                            <Card key={movie.id} movie={movie}></Card>
-                        ))
-                    }
-                </div>
-            </section>
-        </main>
+        <>
+        <Headers></Headers>
+            <main className='dark:bg-slate-800'>
+                <section className='py-7 ml-7'>
+                    <p className='text-3xl text-gray-700 dark:text-white'> {movies.length === 0 ? `No result found for "${queryTerm}"`: `Result for "${queryTerm}"`} </p>
+                </section>
+                <section className='max-w-7xl mx-auto py-7'>
+                    <div className='flex justify-start flex-wrap'>
+                        {
+                            movies.map((movie)=> (
+                                <Card key={movie.id} movie={movie}></Card>
+                            ))
+                        }
+                    </div>
+                </section>
+            </main>
+            <Footer></Footer>
+        </>
     );
 };
 
