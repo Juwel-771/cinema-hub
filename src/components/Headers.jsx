@@ -123,6 +123,10 @@ const header = () => {
                                 <NavLink to="/movie/upcoming"
                                     className={({isActive})=> isActive ? activeClass : inActiveClass}>Upcoming</NavLink>
                             </li>
+                            <li>
+                                <NavLink to="/movie/upcoming"
+                                    className={({isActive})=> isActive ? activeClass : inActiveClass}>Watchlist</NavLink>
+                            </li>
                         </ul>
                     </div>
                 </div>
