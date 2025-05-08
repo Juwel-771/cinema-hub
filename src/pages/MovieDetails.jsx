@@ -2,11 +2,14 @@ import React, { useEffect, useState } from 'react';
 import Footer from '../components/Footer';
 import Headers from '../components/Headers';
 import { useParams } from 'react-router-dom';
+import { BiSolidMoviePlay } from "react-icons/bi";
+
 
 
 const MovieDetails = () => {
 
-    const [watchlist, setWatchList] = useState([]);
+    const [watchMovie, setWatchMovie] = useState(true);
+    const [watchList, setWatchList] = useState(null);
     const params = useParams();
     const [movie, setMovies] = useState([]);
     const image = `https://image.tmdb.org/t/p/w400/${movie.poster_path}`;
@@ -21,10 +24,21 @@ const MovieDetails = () => {
         fetchMovie();
     }, []);
 
+    const handleWatchMovie = e => {
+        e.preventDefault();        
+        setWatchMovie(!watchMovie);
+        console.log(watchMovie);
+    }
+
     const handleWatchList = e => {
         e.preventDefault();
-        
+        if(watchMovie===true){
+            setWatchList("Added to Watchlist")
+        }else{
+            setWatchList("Add to watchlist")
+        }
 
+        console.log(watchList);
     }
 
     return (
@@ -40,7 +54,19 @@ const MovieDetails = () => {
                         <div className='max-w-2xl text-gray-700 text-lg dark:text-white'>
                             <div className='flex flex-row justify-between'>
                                 <h1 className='text-2xl font-bold my-3 text-center lg:text-left'>{movie.title}</h1>
-                                <button onClick={handleWatchList} type="button" class="text-white bg-purple-700 font-medium rounded-full text-sm px-4 text-center mb-2 dark:bg-purple-600">Add to Watchlist</button>
+                                <button onClick={handleWatchMovie} type="button" class="text-white bg-purple-700 font-medium rounded-full text-sm px-4 text-center mb-2 dark:bg-purple-600">
+                                  {`${watchMovie ? "Add to Watchlist": "Added to Watchlist"}`}
+                                </button>
+                                
+                                <button type="button" class="relative inline-flex items-center p-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg">
+                                {/* <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
+                                <path d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z"/>
+                                <path d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z"/>
+                                </svg> */}
+                                <span className='text-3xl'><BiSolidMoviePlay /></span>
+                                <div class="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -end-2 dark:border-gray-900"> {`${watchMovie ? " ": "1"}`} </div>
+                                </button>
+
                             </div>
                             <p className='py-4'>{movie.overview}</p>
                             {
