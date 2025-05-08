@@ -21,3 +21,8 @@ https://api.themoviedb.org/3/movie/upcoming?api_key=abef22202ef4bbd29941b8c79553
 
 Search:
 https://api.themoviedb.org/3/search/movie?api_key=abef22202ef4bbd29941b8c79553fc53&query={movie_name}
+
+
+<span class="bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent"> </span>
+
+<button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500"></button>
