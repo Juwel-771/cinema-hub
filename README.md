@@ -16,7 +16,7 @@ A responsive, single-page application built with **React.js** and **React Router
 
 ## 🖼️ Demo
 
-> [Live Demo](https://cine-hub-movie.netlify.app/) – *hosted on Vercel/Netlify or your preferred platform.*
+> 🔗 [Live Preview](https://cine-hub-movie.netlify.app/)
 
 ---
 
