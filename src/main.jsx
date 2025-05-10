@@ -11,7 +11,8 @@ import PageNotFound from './pages/PageNotFound.jsx'
 const router = createBrowserRouter ([
   {
     path: '',
-    element: <MovieList apiPath = "movie/now_playing"></MovieList>
+    element: <MovieList apiPath = "movie/now_playing"></MovieList>,
+    title: "Home"
   },
   {
     path: 'movie/:id',
@@ -19,15 +20,18 @@ const router = createBrowserRouter ([
   },
   {
     path: 'movie/popular',
-    element: <MovieList apiPath = "movie/popular"></MovieList>
+    element: <MovieList apiPath = "movie/popular"></MovieList>,
+    title: "Popular"
   },
   {
     path: 'movie/top',
-    element: <MovieList apiPath = "movie/top_rated"></MovieList>
+    element: <MovieList apiPath = "movie/top_rated"></MovieList>,
+    title: "Top Rated"
   },
   {
     path: 'movie/upcoming',
-    element: <MovieList apiPath = "movie/upcoming"></MovieList>
+    element: <MovieList apiPath = "movie/upcoming"></MovieList>,
+    title: "Upcoming"
   },
   {
     path: 'search',
@@ -35,7 +39,7 @@ const router = createBrowserRouter ([
   },
   {
     path: '*',
-    element: <PageNotFound></PageNotFound>
+    element: <PageNotFound title = "Page Not Found"></PageNotFound>
   }
 ])
 

@@ -3,10 +3,11 @@ import Footer from '../components/Footer';
 import Headers from '../components/Headers';
 import { useParams } from 'react-router-dom';
 import { BiSolidMoviePlay } from "react-icons/bi";
+import useTitle from '../components/useTitle';
 
 
 
-const MovieDetails = () => {
+const MovieDetails = ({title}) => {
 
     const [watchMovie, setWatchMovie] = useState(true);
     const [watchList, setWatchList] = useState(null);
@@ -24,6 +25,8 @@ const MovieDetails = () => {
         fetchMovie();
     }, []);
 
+    
+
     const handleWatchMovie = e => {
         e.preventDefault();        
         setWatchMovie(!watchMovie);
@@ -40,6 +43,8 @@ const MovieDetails = () => {
 
         console.log(watchList);
     }
+
+    useTitle(`Movie`)
 
     return (
         <>

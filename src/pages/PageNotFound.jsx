@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Headers from '../components/Headers';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 import Button from '../components/Button';
 
 const PageNotFound = () => {
+
+    useEffect(()=> {
+        document.title = `Page not found / Cine Hub`
+    });
+
     return (
         <>
         <Headers></Headers>

@@ -4,13 +4,19 @@ import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 import Card from '../components/Card';
 import useFetch from '../hooks/useFetch';
+import useTitle from '../components/useTitle';
 
 
-const MovieList = ({apiPath}) => {
+const MovieList = ({apiPath, title}) => {
 
     // const [movies, setMovies] = useState([]);
     const {data : movies} = useFetch(apiPath);
 
+    // useEffect(()=>{
+    //     document.title = `${title} / Cine Hub`
+    // });
+
+    useTitle("Home")
 
     // useEffect(() => {
     //     async function fetchMovies(){
